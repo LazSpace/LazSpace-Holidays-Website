@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Intelligence Hub | LazSpace Holidays</title>
+    <!-- CSS and SEO will be managed by main.js and seo.js -->
+</head>
+
+<body class="navbar-inner-page">
+    <div id="app">
+        <header id="header" class="navbar-inner-page"></header>
+
+        <main style="padding-top: 120px; min-height: 80vh; background: var(--color-bg-light);">
+            <div class="container">
+                <!-- Landing/Breadcrumb Area -->
+                <div id="hub-landing" style="margin-bottom: 3rem;">
+                    <h1 style="font-family: 'Playfair Display', serif; color: var(--color-primary);">Travel Intelligence
+                        Hub</h1>
+                    <p style="max-width: 700px; line-height: 1.6;">Our proprietary resource for visa requirements,
+                        seasonal weather insights, and localized travel guides to help you plan with precision.</p>
+                </div>
+
+                <!-- Dynamic Content Injection Point -->
+                <div id="hub-content">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <!-- Default view if no params -->
+                        <div class="card" style="padding: 2rem;">
+                            <h3>Visa Information</h3>
+                            <p>Check requirements for Bali, Dubai, Thailand and more.</p>
+                            <a href="?type=visa&id=bali" class="btn btn-outline" style="margin-top: 1rem;">View Bali
+                                Visa</a>
+                        </div>
+                        <div class="card" style="padding: 2rem;">
+                            <h3>Best Time to Visit</h3>
+                            <p>Discover peak seasons and weather patterns.</p>
+                            <a href="?type=best-time&id=kerala" class="btn btn-outline" style="margin-top: 1rem;">View
+                                Kerala Seasons</a>
+                        </div>
+                        <div class="card" style="padding: 2rem;">
+                            <h3>Budget Calculator</h3>
+                            <p>Estimate your trip costs instantly.</p>
+                            <a href="/budget-calculator.html" class="btn btn-outline" style="margin-top: 1rem;">Open
+                                Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+    <!-- Essential Scripts -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+        import { IntelligenceHub } from '/src/js/intelligence-hub.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            IntelligenceHub.init();
+        });
+    </script>
+</body>
+
+</html>

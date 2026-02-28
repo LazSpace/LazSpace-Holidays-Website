@@ -5,6 +5,8 @@
         "services": "Services",
         "destinations": "Destinations",
         "itinerary": "Sample Itinerary",
+        "intelligence": "Travel Info",
+        "budget": "Budget Calculator",
         "contact": "Contact"
     },
     "hero": {

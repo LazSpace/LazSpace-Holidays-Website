@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Budget Calculator | LazSpace Holidays</title>
+</head>
+
+<body class="navbar-inner-page">
+    <div id="app">
+        <header id="header" class="navbar-inner-page"></header>
+
+        <main style="padding-top: 120px; padding-bottom: 5rem; background: var(--color-bg-light);">
+            <div class="container" style="max-width: 900px;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <span class="badge badge-trust">Financial Intelligence</span>
+                    <h1 style="font-family: 'Playfair Display', serif; margin-top: 1rem; color: var(--color-primary);">
+                        Smart Trip Estimator</h1>
+                    <p>Get a realistic budget estimate for your next journey in seconds.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                    <!-- Input Form -->
+                    <div class="card" style="padding: 2.5rem; background: white;">
+                        <form id="calc-form">
+                            <div class="form-group">
+                                <label class="form-label">Destination</label>
+                                <select id="calc-dest" class="form-input" required>
+                                    <option value="kerala">Kerala, India</option>
+                                    <option value="bali">Bali, Indonesia</option>
+                                    <option value="thailand">Thailand</option>
+                                    <option value="dubai">Dubai, UAE</option>
+                                    <option value="europe">Europe (Schengen)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Duration (Nights)</label>
+                                <input type="number" id="calc-days" class="form-input" value="5" min="1" max="30"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Travelers</label>
+                                <input type="number" id="calc-pax" class="form-input" value="2" min="1" max="12"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Travel Luxury Tier</label>
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 10px;">
+                                    <label
+                                        style="border: 1px solid #ddd; padding: 10px; border-radius: 6px; text-align: center; cursor: pointer;">
+                                        <input type="radio" name="tier" value="budget"> <br> Budget
+                                    </label>
+                                    <label
+                                        style="border: 1px solid var(--color-accent); padding: 10px; border-radius: 6px; text-align: center; cursor: pointer; background: rgba(201,162,39,0.05);">
+                                        <input type="radio" name="tier" value="comfort" checked> <br> Comfort
+                                    </label>
+                                    <label
+                                        style="border: 1px solid #ddd; padding: 10px; border-radius: 6px; text-align: center; cursor: pointer;">
+                                        <input type="radio" name="tier" value="luxury"> <br> Luxury
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; margin-top: 1.5rem; padding: 1rem;">Calculate Estimate 💰</button>
+                        </form>
+                    </div>
+
+                    <!-- Output Area -->
+                    <div id="calc-result" class="card"
+                        style="padding: 2.5rem; background: var(--color-primary); color: white; display: none; height: 100%;">
+                        <h3 style="color: var(--color-accent); margin-bottom: 2rem;">Estimated Trip Total</h3>
+                        <div id="result-total" style="font-size: 3rem; font-weight: 700; margin-bottom: 2rem;">₹0</div>
+
+                        <div id="result-breakdown"
+                            style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: grid; gap: 1rem;">
+                            <!-- Break down lines -->
+                        </div>
+
+                        <div style="margin-top: 3rem;">
+                            <a href="/contact.html" class="btn btn-accent" style="width: 100%;">Get Official Quote</a>
+                        </div>
+                        <p style="font-size: 0.8rem; margin-top: 1rem; color: rgba(255,255,255,0.6); line-height: 1.4;">
+                            *This is an AI-driven estimate including accommodation, food, local transport, and basic
+                            visa/insurance. International flights are NOT included.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+        import { BudgetCalculator } from '/src/utils/calculators.js';
+        import { AnalyticsTracker } from '/src/utils/AnalyticsTracker.js';
+
+        document.getElementById('calc-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const matrixRes = await fetch('/data/budget-matrix.json');
+            const matrix = await matrixRes.json();
+
+            const data = {
+                destination: document.getElementById('calc-dest').value,
+                days: parseInt(document.getElementById('calc-days').value),
+                pax: parseInt(document.getElementById('calc-pax').value),
+                tier: document.querySelector('input[name="tier"]:checked').value,
+                matrix: matrix
+            };
+
+            const estimate = BudgetCalculator.estimate(data);
+
+            // UI Update
+            const resultBox = document.getElementById('calc-result');
+            resultBox.style.display = 'block';
+            document.getElementById('result-total').innerText = estimate.total.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+
+            const breakdown = document.getElementById('result-breakdown');
+            breakdown.innerHTML = `
+                <div style="display:flex; justify-content:space-between;"><span>Accommodation</span> <span>₹${estimate.breakDown.accommodation.toLocaleString()}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span>Daily Food & Meals</span> <span>₹${estimate.breakDown.food.toLocaleString()}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span>Local Transport</span> <span>₹${estimate.breakDown.transport.toLocaleString()}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span>Visa & Insurance</span> <span>₹${estimate.breakDown.visa_insurance.toLocaleString()}</span></div>
+            `;
+
+            // GA4 Event via existing tracker
+            if (window.AnalyticsTracker) {
+                AnalyticsTracker.pushToDataLayer('Budget Calculated', {
+                    destination: data.destination,
+                    total: estimate.total,
+                    pax: data.pax,
+                    tier: data.tier
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

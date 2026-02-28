@@ -30,6 +30,8 @@ export function Footer() {
               <li><a href="#about" data-i18n="nav.about">About Us</a></li>
               <li><a href="#services" data-i18n="nav.services">Services</a></li>
               <li><a href="/itinerary.html" data-i18n="nav.itinerary">Sample Itinerary</a></li>
+               <li><a href="/travel-info.html" data-i18n="nav.intelligence">Travel Info Hub</a></li>
+              <li><a href="/budget-calculator.html" data-i18n="nav.budget">Budget Calculator</a></li>
               <li><a href="/contact.html" data-i18n="nav.contact">Contact Us</a></li>
             </ul>
           </div>

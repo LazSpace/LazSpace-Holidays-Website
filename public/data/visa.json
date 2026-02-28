@@ -1,0 +1,67 @@
+{
+    "destinations": {
+        "bali": {
+            "country": "Indonesia",
+            "visa_type": "Visa on Arrival (VoA)",
+            "documents": [
+                "Passport valid for 6 months",
+                "Return/Onward ticket",
+                "Proof of accommodation",
+                "Customs Declaration (e-CD)"
+            ],
+            "cost": "IDR 500,000 (approx. ₹2,700)",
+            "processing_time": "Instant (at airport)",
+            "last_updated": "2026-02-28",
+            "disclaimer": "Visa rules can change without notice. Always verify with the Indonesian Embassy.",
+            "faqs": [
+                {
+                    "q": "Can Indians get E-VoA?",
+                    "a": "Yes, Indians can apply for E-VoA online before travel to skip the queue."
+                },
+                {
+                    "q": "Is travel insurance mandatory?",
+                    "a": "It is highly recommended for all international travel to Bali."
+                }
+            ]
+        },
+        "dubai": {
+            "country": "United Arab Emirates",
+            "visa_type": "Tourist Visa (30/60 Days)",
+            "documents": [
+                "Passport color copy",
+                "Passport size photo with white background",
+                "Confirmed flight tickets",
+                "Bank statements (if required)"
+            ],
+            "cost": "approx. ₹6,500 for 30 days",
+            "processing_time": "3-5 Working Days",
+            "last_updated": "2026-02-28",
+            "disclaimer": "Visa approval is at the sole discretion of UAE immigration.",
+            "faqs": [
+                {
+                    "q": "Can I get a visa on arrival with a US Visa?",
+                    "a": "Yes, Indian passport holders with a valid US Visa (Greencard or Tourist) can get a 14-day VoA."
+                }
+            ]
+        },
+        "thailand": {
+            "country": "Thailand",
+            "visa_type": "Visa Waiver (Current Promo)",
+            "documents": [
+                "Passport valid for 6 months",
+                "Proof of funds (10,000 THB per person)",
+                "Return ticket"
+            ],
+            "cost": "Free (until further notice)",
+            "processing_time": "Instant",
+            "last_updated": "2026-02-28",
+            "disclaimer": "The fee waiver is a temporary promotion and may end or be extended.",
+            "faqs": [
+                {
+                    "q": "How long can I stay on a waiver?",
+                    "a": "Typically 30 days for Indian tourists."
+                }
+            ]
+        }
+    }
+}

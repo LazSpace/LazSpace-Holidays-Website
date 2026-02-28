@@ -146,7 +146,7 @@ export const SEOManager = {
                 "@type": "ListItem",
                 "position": idx + 1,
                 "name": crumb.name,
-                "item": crumb.url
+                "item": crumb.item
             }))
         };
         this.injectSchemaScript(schema, 'schema-breadcrumb');

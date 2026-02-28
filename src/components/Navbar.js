@@ -25,6 +25,7 @@ export function Navbar() {
             <li><a href="#about" class="nav-link" data-i18n="nav.about">About Us</a></li>
             <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
             <li><a href="#destinations" class="nav-link" data-i18n="nav.destinations">Destinations</a></li>
+            <li><a href="/travel-info.html" class="nav-link" data-i18n="nav.intelligence">Travel Info</a></li>
             <li><a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
           
