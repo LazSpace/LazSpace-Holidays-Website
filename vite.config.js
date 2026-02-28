@@ -19,7 +19,9 @@ export default defineConfig({
                 aiPlanner: resolve(__dirname, 'ai-planner.html'),
                 admin: resolve(__dirname, 'admin/index.html'),
                 localSeo: resolve(__dirname, 'src/pages/local-seo.html'),
-                blog: resolve(__dirname, 'src/pages/blog.html')
+                blog: resolve(__dirname, 'src/pages/blog.html'),
+                travelInfo: resolve(__dirname, 'travel-info.html'),
+                budgetCalculator: resolve(__dirname, 'budget-calculator.html')
             },
             output: {
                 manualChunks(id) {
