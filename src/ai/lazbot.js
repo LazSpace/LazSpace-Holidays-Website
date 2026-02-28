@@ -80,9 +80,15 @@ export const LazBot = {
             this.appendMessage('bot', reply || "I'm sorry, I'm having trouble thinking right now.");
 
         } catch (err) {
-            console.error(err);
+            console.error('[LazBot] Connection error:', err);
             document.getElementById(typingId)?.remove();
-            this.appendMessage('bot', "Connection error. Please try again.");
+
+            let errorMsg = "I'm having trouble connecting to my brain. Please try again later.";
+            if (err.message.includes('VITE_AI_API_KEY')) {
+                errorMsg = "System configuration error: Missing AI credentials. Please check environment variables.";
+            }
+
+            this.appendMessage('bot', errorMsg);
         }
     },
 

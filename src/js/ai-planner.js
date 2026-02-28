@@ -124,9 +124,10 @@ window.triggerAIGeneration = async () => {
         if (resContainer) {
             resContainer.style.display = 'block';
             resContainer.innerHTML = `
-                    <h3 style="color:red;">Error generating itinerary. Ensure local API server is running.</h3>
-                    <button class="btn btn-primary" onclick="location.reload()">Back</button>
-                    <p><small>${err.message}</small></p>
+                    <h3 style="color:red;">AI Brain Connection Error</h3>
+                    <p>We're having trouble connecting to the AI Trip Planner. If you're seeing this on the live site, ensure the <strong>VITE_AI_API_KEY</strong> environment variable is set in Netlify.</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Try Again</button>
+                    <p style="margin-top:1rem;"><small>Technical Error: ${err.message}</small></p>
                 `;
         }
     }
