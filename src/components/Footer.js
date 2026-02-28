@@ -14,7 +14,7 @@ export function Footer() {
             <div style="margin-top: 15px;">
               <!-- Google Reviews Placeholder -->
               <div style="background: white; color: black; padding: 10px; border-radius: 5px; display: inline-flex; align-items: center; gap: 10px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="20">
+                <img src="https://www.gstatic.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google" width="20">
                 <div>
                     <div style="color: #fbbc04; font-size: 14px; letter-spacing: 2px;">★★★★★</div>
                     <div style="font-size: 11px; font-weight: bold; color: #555;">5.0 Rating (42 Reviews)</div>
