@@ -1,0 +1,160 @@
+{
+    "destinations": {
+        "bali": {
+            "months": [
+                {
+                    "month": "Jan",
+                    "temp": "28°C",
+                    "rain": "High",
+                    "status": "Off-Season"
+                },
+                {
+                    "month": "Feb",
+                    "temp": "28°C",
+                    "rain": "High",
+                    "status": "Off-Season"
+                },
+                {
+                    "month": "Mar",
+                    "temp": "29°C",
+                    "rain": "Moderate",
+                    "status": "Shoulder"
+                },
+                {
+                    "month": "Apr",
+                    "temp": "30°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "May",
+                    "temp": "30°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Jun",
+                    "temp": "29°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Jul",
+                    "temp": "28°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Aug",
+                    "temp": "28°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Sep",
+                    "temp": "29°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Oct",
+                    "temp": "30°C",
+                    "rain": "Moderate",
+                    "status": "Shoulder"
+                },
+                {
+                    "month": "Nov",
+                    "temp": "29°C",
+                    "rain": "High",
+                    "status": "Off-Season"
+                },
+                {
+                    "month": "Dec",
+                    "temp": "28°C",
+                    "rain": "High",
+                    "status": "Off-Season"
+                }
+            ],
+            "best_overall": "April to September",
+            "why": "Dry season with perfect beach weather and clear skies for outdoor activities."
+        },
+        "kerala": {
+            "months": [
+                {
+                    "month": "Jan",
+                    "temp": "27°C",
+                    "rain": "None",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Feb",
+                    "temp": "28°C",
+                    "rain": "None",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Mar",
+                    "temp": "30°C",
+                    "rain": "Low",
+                    "status": "Shoulder"
+                },
+                {
+                    "month": "Apr",
+                    "temp": "32°C",
+                    "rain": "Moderate",
+                    "status": "Shoulder"
+                },
+                {
+                    "month": "May",
+                    "temp": "31°C",
+                    "rain": "High",
+                    "status": "Shoulder"
+                },
+                {
+                    "month": "Jun",
+                    "temp": "27°C",
+                    "rain": "Very High",
+                    "status": "Off-Season"
+                },
+                {
+                    "month": "Jul",
+                    "temp": "26°C",
+                    "rain": "Very High",
+                    "status": "Off-Season"
+                },
+                {
+                    "month": "Aug",
+                    "temp": "27°C",
+                    "rain": "High",
+                    "status": "Shoulder"
+                },
+                {
+                    "month": "Sep",
+                    "temp": "28°C",
+                    "rain": "Moderate",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Oct",
+                    "temp": "29°C",
+                    "rain": "Moderate",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Nov",
+                    "temp": "28°C",
+                    "rain": "Low",
+                    "status": "Peak"
+                },
+                {
+                    "month": "Dec",
+                    "temp": "27°C",
+                    "rain": "None",
+                    "status": "Peak"
+                }
+            ],
+            "best_overall": "September to March",
+            "why": "Cooler temperatures and beautiful greenery after monsoons, ideal for backwaters and hills."
+        }
+    }
+}

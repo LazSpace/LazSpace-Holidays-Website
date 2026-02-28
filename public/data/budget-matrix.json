@@ -1,0 +1,30 @@
+{
+    "base_rates": {
+        "accommodation": {
+            "budget": 2500,
+            "comfort": 5500,
+            "luxury": 15000
+        },
+        "food": {
+            "budget": 1000,
+            "comfort": 2500,
+            "luxury": 6000
+        },
+        "transport": {
+            "budget": 800,
+            "comfort": 2000,
+            "luxury": 5000
+        }
+    },
+    "destination_multipliers": {
+        "kerala": 1.0,
+        "bali": 1.2,
+        "dubai": 1.8,
+        "europe": 2.5,
+        "thailand": 1.1
+    },
+    "misc_fees": {
+        "visa_service": 1500,
+        "insurance_base": 800
+    }
+}
