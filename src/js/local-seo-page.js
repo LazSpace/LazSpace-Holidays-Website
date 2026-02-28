@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header');
     const footerContainer = document.getElementById('footer');
 
-    if (header) header.innerHTML = Navbar();
+    if (header) {
+        header.innerHTML = Navbar();
+        header.classList.add('navbar-inner-page');
+    }
     if (footerContainer) footerContainer.innerHTML = Footer();
 
     // Mobile Menu Toggle

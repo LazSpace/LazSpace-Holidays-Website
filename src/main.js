@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (header) {
     header.innerHTML = Navbar();
+    // Auto-apply inner-page styling if not the main landing page
+    if (window.location.pathname !== '/' && !window.location.pathname.includes('index.html')) {
+      header.classList.add('navbar-inner-page');
+    }
   }
 
   if (footerContainer) {
