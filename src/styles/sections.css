@@ -1,0 +1,318 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-align: center;
+    overflow: hidden;
+    padding-top: 80px;
+    /* Offset for navbar */
+}
+
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: gentleZoom 20s infinite alternate linear;
+}
+
+@keyframes gentleZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(11, 28, 45, 0.95) 0%,
+            rgba(11, 28, 45, 0.75) 50%,
+            rgba(11, 28, 45, 0.95) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 var(--space-sm);
+    z-index: 1;
+    animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-title {
+    color: var(--color-white);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: var(--space-sm);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: var(--space-md);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.about-content {
+    padding-right: var(--space-md);
+}
+
+.about-image-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.about-image {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 2;
+}
+
+.about-image-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius-md);
+    z-index: 1;
+}
+
+.trust-badges {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    margin-top: var(--space-md);
+}
+
+/* Services Section Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+/* Featured Destinations */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.card-dark {
+    background: var(--color-primary-light);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-dark .card-title {
+    color: var(--color-white) !important;
+}
+
+.card-dark .card-text {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.card-dark .card-content {
+    background: var(--color-primary-light) !important;
+}
+
+/* B2B Section */
+.b2b-form-wrapper {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 5px solid var(--color-accent);
+}
+
+/* Itinerary Details */
+.itinerary-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .itinerary-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+/* Accordion */
+.accordion {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    background-color: var(--color-bg-light);
+    transition: background-color var(--transition-fast);
+    color: var(--color-primary);
+}
+
+.accordion-header:hover {
+    background-color: var(--color-bg-alt);
+}
+
+.accordion-content {
+    padding: 0 var(--space-md);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background-color: var(--color-white);
+}
+
+.accordion-item.active .accordion-content {
+    padding: var(--space-sm) var(--space-md);
+    max-height: 500px;
+    /* arbitrary max height for animation */
+}
+
+.accordion-item .icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .icon {
+    transform: rotate(45deg);
+}
+
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer styling */
+.footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.8);
+    padding: var(--space-lg) 0 var(--space-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.footer-col h4 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    font-size: 1.25rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}

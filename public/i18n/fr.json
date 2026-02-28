@@ -1,0 +1,23 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "services": "Nos Services",
+        "destinations": "Destinations",
+        "itinerary": "Exemple d'itinéraire",
+        "contact": "Contact",
+        "incompleteNotice": "Le site est en cours de traduction. Certains contenus peuvent apparaître en anglais."
+    },
+    "hero": {
+        "title": "Des voyages sur mesure.<br>Des expériences uniques.",
+        "subtitle": "Organisation de voyages premium du Kerala vers le monde entier.",
+        "ctaPlan": "Planifier mon voyage",
+        "ctaExplore": "Explorer les forfaits"
+    },
+    "contact": {
+        "validation": {
+            "required": "Ce champ est obligatoire",
+            "email": "Entrez une adresse email valide"
+        }
+    }
+}

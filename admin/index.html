@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>LazSpace Admin Area | Secure Module</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/components.css">
+    <style>
+        body {
+            background: #F4F5F7;
+        }
+
+        .admin-nav {
+            background: var(--color-primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-nav h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .dashboard-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f9f9f9;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-new {
+            background: #e3f2fd;
+            color: #1e88e5;
+        }
+
+        .badge-hot {
+            background: #ffebee;
+            color: #e53935;
+        }
+
+        .badge-closed {
+            background: #e8f5e9;
+            color: #43a047;
+        }
+
+        #auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-primary);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .auth-box input {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mock Authentication -->
+    <div id="auth-overlay">
+        <div class="auth-box">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--color-primary); margin-bottom: 1.5rem;">
+                LazSpace Portal</h2>
+            <input type="password" id="admin-pass" placeholder="Enter Secure Password" />
+            <button class="btn btn-primary" id="login-btn" style="width: 100%;">Access Portal</button>
+            <p style="font-size: 0.8rem; margin-top: 1rem; color: #666;">(Use 'admin' for demo test)</p>
+        </div>
+    </div>
+
+    <nav class="admin-nav">
+        <h1>LazSpace CRM & AI Engine</h1>
+        <div><button class="btn btn-outline" style="color: white; border-color: white;" onclick="location.href='/'">View
+                Live Site</button></div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" class="active" data-target="leads-panel">Leads Pipeline</a></li>
+                <li><a href="#" data-target="ai-content-panel">AI Content Generator</a></li>
+                <li><a href="#" data-target="analytics-panel">Smart Analytics</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <!-- Leads Panel -->
+            <section id="leads-panel" class="dashboard-panel">
+                <h2>Active Leads Pipeline</h2>
+                <div style="overflow-x: auto;">
+                    <table id="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Destination</th>
+                                <th>Budget</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Injected by main.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- AI Generator Panel -->
+            <section id="ai-content-panel" class="dashboard-panel" style="display: none;">
+                <h2>AI Content Engineer</h2>
+                <p>Generate marketing copy, blogs, and SEO content directly utilizing stored Brand Voice prompts.</p>
+
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label class="form-label">Content Type</label>
+                    <select id="ai-content-type" class="form-input">
+                        <option value="Instagram Caption">Instagram Caption</option>
+                        <option value="Blog Post Intro">Blog Post Intro</option>
+                        <option value="Ad Copy">Facebook/Google Ad Copy</option>
+                        <option value="Destination Description">Destination SEO Description</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Subject / Topic</label>
+                    <input type="text" id="ai-content-topic" class="form-input"
+                        placeholder="e.g., Honeymoon packages in Bali">
+                </div>
+
+                <button class="btn btn-accent" id="generate-content-btn" style="width: 100%; margin-top: 1rem;">Generate
+                    Copy</button>
+
+                <div style="margin-top: 2rem;">
+                    <label class="form-label">Generated Output</label>
+                    <textarea id="ai-content-output" class="form-input" rows="6"
+                        placeholder="AI result will appear here..."></textarea>
+                </div>
+            </section>
+
+            <!-- Analytics Panel -->
+            <section id="analytics-panel" class="dashboard-panel" style="display: none;">
+                <h2 style="margin-bottom: 2rem;">Smart Behavioral Analytics</h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div
+                        style="background:var(--color-bg-light); padding:1.5rem; border-radius:8px; border-top:4px solid var(--color-accent); text-align:center;">
+                        <span style="font-size:0.9rem; color:#666; text-transform:uppercase; letter-spacing:1px;">Total
+                            Visitors</span>
+                        <h3 id="stat-visitors" style="font-size:2rem; color:var(--color-primary); margin:0.5rem 0 0;">
+                            8,452</h3>
+                    </div>
+                    <div
+                        style="background:var(--color-bg-light); padding:1.5rem; border-radius:8px; border-top:4px solid #4caf50; text-align:center;">
+                        <span
+                            style="font-size:0.9rem; color:#666; text-transform:uppercase; letter-spacing:1px;">Conversion
+                            Rate</span>
+                        <h3 id="stat-conv" style="font-size:2rem; color:var(--color-primary); margin:0.5rem 0 0;">4.2%
+                        </h3>
+                    </div>
+                    <div
+                        style="background:var(--color-bg-light); padding:1.5rem; border-radius:8px; border-top:4px solid #f44336; text-align:center;">
+                        <span style="font-size:0.9rem; color:#666; text-transform:uppercase; letter-spacing:1px;">Avg
+                            Lead Score</span>
+                        <h3 id="stat-score" style="font-size:2rem; color:var(--color-primary); margin:0.5rem 0 0;">
+                            76/100</h3>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 1.5rem;">
+                        <h4
+                            style="margin-bottom: 1rem; color: var(--color-primary); border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">
+                            Top Destinations Viewed</h4>
+                        <ul id="top-dest-list" style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                            <li>1. Kerala Backwaters (3,241 views)</li>
+                            <li>2. Bali Honeymoon (1,890 views)</li>
+                            <li>3. Munnar Corporate (1,450 views)</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 1.5rem;">
+                        <h4
+                            style="margin-bottom: 1rem; color: var(--color-primary); border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">
+                            Traffic Sources (Mock GA4)</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                            <li><span
+                                    style="display:inline-block; width:12px; height:12px; background:#4caf50; border-radius:50%; margin-right:8px;"></span>
+                                Organic Search: 65%</li>
+                            <li><span
+                                    style="display:inline-block; width:12px; height:12px; background:#2196f3; border-radius:50%; margin-right:8px;"></span>
+                                Direct Traffic: 25%</li>
+                            <li><span
+                                    style="display:inline-block; width:12px; height:12px; background:#ff9800; border-radius:50%; margin-right:8px;"></span>
+                                Social (Meta): 10%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--color-primary);">Raw Event Log (Local Storage Tracker)
+                    </h4>
+                    <div id="analytics-data"
+                        style="background: #1e1e1e; color: #a6e22e; padding: 1rem; border-radius: 4px; font-family: monospace; max-height: 250px; overflow-y: auto; font-size: 0.85rem;">
+                        Data processing...
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="../src/js/admin.js"></script>
+</body>
+
+</html>

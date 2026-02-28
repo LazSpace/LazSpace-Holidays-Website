@@ -1,0 +1,191 @@
+/* LazBot AI Chat UI Styles */
+.lazbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+}
+
+body.rtl .lazbot-container {
+    right: auto;
+    left: 20px;
+}
+
+.lazbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.lazbot-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--color-accent);
+}
+
+.lazbot-window {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUpFade 0.3s ease;
+}
+
+body.rtl .lazbot-window {
+    right: auto;
+    left: 0;
+}
+
+.lazbot-window.active {
+    display: flex;
+}
+
+.lazbot-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lazbot-title {
+    font-weight: 600;
+}
+
+.lazbot-title span {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    display: block;
+    font-weight: 400;
+}
+
+.lazbot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.lazbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bot-msg {
+    align-self: flex-start;
+    background: white;
+    border: 1px solid #eee;
+    color: #333;
+    border-bottom-left-radius: 0;
+}
+
+.user-msg {
+    align-self: flex-end;
+    background: var(--color-primary);
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.lazbot-input-area {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.lazbot-input-area input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-family: inherit;
+}
+
+.lazbot-input-area input:focus {
+    border-color: var(--color-primary);
+}
+
+.lazbot-input-area button {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    padding: 0 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lazbot-input-area button:hover {
+    background: #b59223;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing-indicator span {
+    animation: typing 1s infinite;
+    font-size: 1.2rem;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

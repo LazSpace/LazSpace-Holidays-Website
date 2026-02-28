@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LazSpace Holidays | Loading Package...</title>
+    <!-- SEO Manager will dynamically inject metadata here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <main>
+        <!-- Dynamic SEO Hero Header -->
+        <section class="hero"
+            style="min-height: 60vh; background: linear-gradient(rgba(11,28,45,0.7), rgba(11,28,45,0.7)), url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop') center/cover; padding-top: 120px;">
+            <div class="container text-center text-white">
+                <h1 class="hero-title" id="seo-h1" style="font-size: 3.5rem; margin-bottom: 20px;">{Destination} Tour
+                    Package from {City}</h1>
+                <p class="hero-subtitle" id="seo-subtitle"
+                    style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto; color: rgba(255,255,255,0.9);">
+                    Premium, handcrafted itineraries bringing you from {City} directly to the heart of {Destination}.
+                    Let LazSpace Holidays handle every detail of your luxury escape.
+                </p>
+                <div class="hero-cta-group" style="justify-content: center;">
+                    <button class="btn btn-primary" id="btn-seo-enquire">Enquire Now</button>
+                    <a href="https://wa.me/918921426073" class="btn btn-accent"><i class="fab fa-whatsapp"></i> Chat
+                        with Expert</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Body -->
+        <section class="section" id="seo-body">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;">
+
+                    <!-- Content Area -->
+                    <div class="seo-content" style="font-size: 1.1rem; line-height: 1.8; color: #333;">
+                        <h2
+                            style="color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">
+                            Why Travel to {Destination} from {City}?</h2>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Traveling from <strong>{City}</strong> to <strong>{Destination}</strong> has never been
+                            easier. At LazSpace Holidays, we specialize in curating seamless travel experiences tailored
+                            specifically for guests departing from {City}.
+                            Whether you're looking for a romantic honeymoon, a family vacation, or a thrilling
+                            adventure, our deep connections in {Destination} ensure you receive premium treatment
+                            ranging from luxury accommodations to exclusive backwater tours.
+                        </p>
+
+                        <h3 style="color: var(--color-primary); margin-top: 2rem; margin-bottom: 1rem;">What is
+                            Included?</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 2rem;">
+                            <li>Premium flights or transport connections from {City}</li>
+                            <li>Luxury 4-Star or 5-Star accommodations in {Destination}</li>
+                            <li>Exclusive, private sightseeing with certified guides</li>
+                            <li>24/7 dedicated LazSpace concierge support</li>
+                            <li>All necessary permits, tolls, and breakfast plans</li>
+                        </ul>
+
+                        <div id="seo-ai-content"
+                            style="background: var(--color-bg-light); padding: 2rem; border-left: 4px solid var(--color-accent); border-radius: 8px; margin-top: 2rem;">
+                            <h4 style="margin-top: 0; color: var(--color-primary);">AI Fast-Track: Plan this trip
+                                instantly</h4>
+                            <p style="font-size: 0.95rem;">Skip the wait. Use our AI travel planner to instantly
+                                generate a custom itinerary for {Destination} tailored to your exact budget and travel
+                                style.</p>
+                            <a href="/ai-planner.html" class="btn btn-primary btn-sm" style="margin-top: 10px;">Try AI
+                                Planner</a>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar / Interlinking -->
+                    <aside class="seo-sidebar">
+                        <div
+                            style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+                            <h3
+                                style="color: var(--color-primary); font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--color-accent); padding-bottom: 0.5rem;">
+                                Trip Overview</h3>
+                            <p style="margin-bottom: 0.5rem;"><strong>Origin:</strong> <span
+                                    id="side-city">{City}</span></p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Destination:</strong> <span
+                                    id="side-dest">{Destination}</span></p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Duration:</strong> Customizable (3 to 14 days)</p>
+                            <p style="margin-bottom: 1.5rem;"><strong>Type:</strong> Premium/Luxury</p>
+                            <button class="btn btn-primary" style="width: 100%;">Request Free Quote</button>
+                        </div>
+
+                        <!-- Dynamic Interlinking injected here by JS -->
+                        <div id="seo-cluster-links"></div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- Form modal (reusing main modal concept) -->
+    <div id="enquiry-modal" class="modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(11,28,45,0.8); z-index:9999; align-items:center; justify-content:center;">
+        <div style="background:white; padding:3rem; border-radius:8px; max-width:500px; width:90%; position:relative;">
+            <button id="close-modal"
+                style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+            <h3 style="color:var(--color-primary); margin-bottom:1rem;">Request Custom Package</h3>
+            <p style="margin-bottom:1.5rem; color:#666; font-size:0.9rem;">Fill out this quick form and our expert team
+                will contact you with a detailed itinerary from <span id="modal-city">{City}</span> to <span
+                    id="modal-dest">{Destination}</span>.</p>
+
+            <form id="seo-lead-form">
+                <input type="text" placeholder="Full Name" required
+                    style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+                <input type="email" placeholder="Email Address" required
+                    style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+                <input type="tel" placeholder="Phone Number / WhatsApp" required
+                    style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+                <button type="submit" class="btn btn-primary" style="width:100%;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Need to include the script bundle here -->
+    <script type="module" src="/src/js/seo-page.js"></script>
+</body>
+
+</html>

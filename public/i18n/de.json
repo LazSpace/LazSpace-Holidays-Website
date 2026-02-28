@@ -1,0 +1,23 @@
+{
+    "nav": {
+        "home": "Startseite",
+        "about": "Über uns",
+        "services": "Dienstleistungen",
+        "destinations": "Reiseziele",
+        "itinerary": "Beispielreiseplan",
+        "contact": "Kontakt",
+        "incompleteNotice": "Die Website wird derzeit übersetzt. Einige Inhalte können auf Englisch erscheinen."
+    },
+    "hero": {
+        "title": "Kuratierte Reisen.<br>Bedeutungsvolle Erlebnisse.",
+        "subtitle": "Premium-Reiseplanung von Kerala in die Welt.",
+        "ctaPlan": "Meine Reise planen",
+        "ctaExplore": "Pakete erkunden"
+    },
+    "contact": {
+        "validation": {
+            "required": "Dieses Feld ist erforderlich",
+            "email": "Geben Sie eine gültige E-Mail-Adresse ein"
+        }
+    }
+}

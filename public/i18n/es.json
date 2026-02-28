@@ -1,0 +1,23 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre nosotros",
+        "services": "Servicios",
+        "destinations": "Destinos",
+        "itinerary": "Ejemplo de itinerario",
+        "contact": "Contacto",
+        "incompleteNotice": "El sitio se está traduciendo. Cierto contenido puede aparecer en inglés."
+    },
+    "hero": {
+        "title": "Viajes seleccionados.<br>Experiencias significativas.",
+        "subtitle": "Planificación de viajes premium desde Kerala para el mundo.",
+        "ctaPlan": "Planear mi viaje",
+        "ctaExplore": "Explorar paquetes"
+    },
+    "contact": {
+        "validation": {
+            "required": "Este campo es requerido",
+            "email": "Introduzca una dirección de correo electrónico válida"
+        }
+    }
+}

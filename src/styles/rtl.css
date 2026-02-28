@@ -1,0 +1,57 @@
+/* RTL Layout Overrides (e.g., Arabic) */
+
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .navbar-nav {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+body.rtl .navbar-logo {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+body.rtl .navbar-actions {
+    margin-left: 0;
+    margin-right: var(--space-md);
+}
+
+body.rtl .form-label {
+    text-align: right;
+}
+
+body.rtl .accordion-header {
+    flex-direction: row-reverse;
+}
+
+/* Icons that indicate physical direction usually need mirroring */
+body.rtl .icon-dir {
+    transform: scaleX(-1);
+}
+
+/* Ensure numbers, phone numbers, left-to-right strings don't scramble */
+body.rtl .bidi-override,
+body.rtl a[href^="tel:"],
+body.rtl a[href^="mailto:"],
+body.rtl a[href^="https://wa.me"],
+body.rtl .price-tag {
+    direction: ltr;
+    unicode-bidi: embed;
+    display: inline-block;
+}
+
+/* Adjust lists and paddings */
+body.rtl ul,
+body.rtl ol {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+body.rtl .card {
+    border-left: none !important;
+    border-right: 4px solid var(--color-accent);
+}
